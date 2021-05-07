@@ -8,7 +8,18 @@ node() {
 }
 stage('build') {
     mtaBuild script: this
+   steps {
+                echo 'Building..'
+            }
 }
+  stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
 stage('deploy') {
     cloudFoundryDeploy script: this
+   steps {
+                echo 'Deploying..'
+            }
 }
